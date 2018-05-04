@@ -54,4 +54,44 @@ Renvoie la valeur lu lors de l'appel de `read()` sous la forme d'un entier.
 -------------
 
 ## Exemple
-  * [Simple.ino](https://github.com/artnod78/Terrarium/blob/master/libraries/ReadKey/examples/Simple/Simple.ino)
+  * [Simple.ino](https://github.com/Artnod-Arduino/ReadKey/blob/master/ReadKey/examples/Simple/Simple.ino)
+  ```c++
+  #include <ReadKey.h>
+
+#define KEY_PIN 0
+
+ReadKey keypad(KEY_PIN);
+
+void setup()
+{	
+}
+
+void loop()
+{
+	keypad.read();
+	
+	if(keypad.isPress())
+	{
+		switch(keypad.key())
+		{
+			case btnRIGHT:
+				// btnRIGHT press
+				break;
+			case btnUP:
+				// btnUP press
+				break;
+			case btnDOWN:
+				// btnDOWN press
+				break;
+			case btnLEFT:
+				// btnLEFT press
+				break;
+			case btnSELECT:
+				// btnSELECT press
+				break;
+			default:
+				break;
+		}
+	}
+}
+  ```
